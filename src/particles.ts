@@ -26,7 +26,7 @@ class Particles {
                 this.particle[i] = particleFunc.scene;
                 this.particle[i].scale.set(0.2, 0.2, 0.2);
                 this.particle[i].rotation.set(Math.random() * 6.28, Math.random() * 6.28, Math.random() * 6.28);
-                this.particle[i].position.set(this.particle[i].position.x  + -8 + 16 * Math.random(), this.particle[i].position.y + 4 + Math.random(), this.particle[i].position.z -3 + 6 * Math.random());
+                this.particle[i].position.set(this.particle[i].position.x  + -8 + 16 * Math.random(), this.particle[i].position.y + 4 + Math.random(), this.particle[i].position.z -8 + 16 * Math.random());
                 this.scene.add( this.particle[i] );
                 this.particleSpeed[i] = (5 * Math.random() +2) * 0.001;
             }, undefined, function ( error ) {
@@ -63,6 +63,12 @@ class Particles {
              this.particle[i].position.set(-8 + 16 * Math.random(), 3 + Math.random(),-3 + 6 * Math.random());
             }
           }
+    }
+
+    clearAll(this: Particles) {
+        for(let i = 0; i<this.particles_count; i++) {
+            this.scene.remove(this.particle[i]);
+        }
     }
 }
 
