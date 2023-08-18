@@ -15,7 +15,7 @@ class Donut {
     }
 
     populate() {
-        this.loader.load('/tinyfile_donut.glb', (gltf) => {
+        this.loader.load('/threejs-donut/tinyfile_donut.glb', (gltf) => {
             this.donut = gltf.scene;
             this.scene.add(this.donut); // Use "this" to refer to class instance
             this.donut.rotation.z += 14;
